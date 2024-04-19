@@ -1,2 +1,5 @@
-# trn-docker
-Docker gyakorlati példák
+# Docker gyakorlati példák
+
+
+
+Képzési anyag a Docker használatához.
