@@ -148,6 +148,29 @@ docker stop [konténer azonosító]
 ## Parancsok futtatása konténerben
 ## Képek kezelése (letöltés, címkézés)
 ## Képek létrehozása (docker build)
+
+## Docker Compose
+
+### Indítás építéssel
+
+```bash
+docker-compose up --build
+```
+
+### Indítás
+
+```bash
+docker-compose up -d
+```
+
+_Megjegyzés: `-d` kapcsolóval a konténerek a háttérben futnak._
+
+### Leállítás
+
+```bash
+docker-compose down
+```
+
 ## Docker alapú alkalmazás saját képből
 ## Képek tárolása Azure-ban (ACR)
 
