@@ -16,6 +16,7 @@ env:
 
 jobs:
   test:
+    name: Tesztelés (CI)
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
 
@@ -37,13 +38,14 @@ jobs:
       - name: Alkalmazás indítása
         run: |
           cd Kod2/01
-          python app.py
+          nohup python app.py &
       - name: Tesztelés
         run: |
           cd Kod2/01
           curl -sS http://localhost:8000 | grep -q "Docker alkalmazás"
 
   deploy:
+    name: Telepítés (CD)
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
 
