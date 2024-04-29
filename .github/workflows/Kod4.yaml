@@ -1,0 +1,52 @@
+name: Kód4 példához - Épít és feltölt (python-streamlit-webapp)
+# Kód4 példához - Épít és feltölt Docker image-t Azure Container Registry-be
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - release-*
+
+env:
+  APP_NAME: python-streamlit-webapp # Alkalmazás képfájl neve
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kód letöltése
+        uses: actions/checkout@v2
+
+      - name: ACR bejelentkezés
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ secrets.ACR_LOGIN_SERVER }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+
+      - name: Beállítás - Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Gyorsítótárazás -  Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Épít és feltölt
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.APP_NAME }}:latest    
+            ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.APP_NAME }}:${{ github.sha }}
+
+      - name: ACR kijelentkezés
+        run: docker logout ${{ secrets.ACR_LOGIN_SERVER }}

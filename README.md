@@ -176,7 +176,7 @@ docker-compose down
 
 Azure Container Registry (ACR) egy Docker képtároló, amely lehetővé teszi a Docker képek tárolását és kezelését a felhőben. Az ACR használatával a fejlesztők könnyen kezelhetik a Docker képeket, és biztonságosan oszthatják meg őket a csapat tagjaival.
 
-### Azure Container Registry létrehozása
+### Azure Container Registry létrehozása (portálból)
 
 1. Lépjen be az Azure Portalba.
 2. Keresse meg a "Tárolóregisztrációs adatbázis" szolgáltatást.
@@ -203,7 +203,6 @@ az ad sp create-for-rbac --name sp-mentorklub-docker --query '{"displayName": di
 
 **Fontos: A kapott adatokat (secret) mentse el, mert csak egyszer jelennek meg!**
 
-
 ### Service Proncipal jogosultság hozzáadása az ACR-hez (programozott hozzáféréshez szükséges)
 
 1. Lépjünk be az Azure Container Registry
@@ -220,11 +219,73 @@ az ad sp create-for-rbac --name sp-mentorklub-docker --query '{"displayName": di
 12. Kattintsunk az "Ellenőrzés és hozzárendelés" gombra
 13. Kattintsunk az "Ellenőrzés és hozzárendelés" gombra
 
+### Docker kép feltöltése az ACR-be
 
-## Azure Webalkalmazás létrehozása Docker képből
+1. Bejelentkezés az ACR-be:
+
+```bash
+az acr login --name [ACR név]
+```
+
+2. Docker kép címkézése:
+
+```bash
+docker tag [kép neve] [ACR név].azurecr.io/[kép neve]:[verzió]
+```
+
+_Megjegyzés: `latest` verziót minden esetben töltsünk fel, hogy egyszerűbb legyen az automatizáció._
+
+3. Docker kép feltöltése:
+
+```bash
+docker push [ACR név].azurecr.io/[kép neve]:[verzió]
+```
+
+## Azure erőforrások létrehozása Docker képből
+
+### Azure Docker instance létrehozása
+
+1. Lépjünk be az Azure Portalba.
+2. Kattintsunk az "Új erőforrás létrehozása" gombra.
+3. Keresés mezőbe írjuk be a "Container Instances" szót.
+4. Kattintsunk a "Container Instances" lehetőségre.
+5. Kattintsunk a "Létrehozás" gombra.
+
+
 ## DevOps CI/CD pipeline alkalmazása
 
 ### GitHub Actions
 
+### Secrets kezelése GitHub repository-ban, ACR hozzáféréshez
+
+1. Lépjünk be a GitHub repository-ba.
+2. Menjünk a "Settings" fülre.
+3. Kattintsunk a "Secrets and variables" menüpontra.
+4. Válasszuk az "Actions" lehetőséget.
+5. Kattintsunk a "New repository secret" gombra.
+6. Adja meg a következő adatokat:
+   - Name: ACR_LOGIN_SERVER
+   - Secret: mentorklub.azurecr.io
+7. Kattints az "Add secret" gombra.
+8. Ismételje meg az 5-7 lépéseket a következő adatokkal:
+   - Name: ACR_USERNAME
+   - Secret: [az ACR felhasználóneve]
+9. Ismételje meg az 5-7 lépéseket a következő adatokkal:
+   - Name: ACR_PASSWORD
+   - Secret: [az ACR password vagy password2]
+
+
 ### ACR használata GitHub Actions-ben
+
+1. Clone-ozzuk le a repository-t a gépünkre.
+2. Hozzunk létre egy `.github/workflows` mappát a repository gyökérkönyvtárában.
+3. Hozzunk létre egy `elso-github-action.yml` fájlt a `.github/workflows` mappában.
+4. Másoljuk be a következő kódot a fájlba:
+
+```yaml
+name: Build and push Docker image to ACR
+
+
+
+## Azure Webalkalmazás létrehozása Docker képből
 
