@@ -26,24 +26,33 @@ jobs:
       - name: Python beállítása
         uses: actions/setup-python@v4
         with:
-          # Semantic version range syntax or exact version of a Python version
           python-version: '3.11'
-          # Optional - x64 or x86 architecture, defaults to x64
           architecture: 'x64'
-      # You can test your matrix by printing the current Python version
-      - name: Display Python version
+      - name: Python verzió megjelenítése
         run: python -c "import sys; print(sys.version)"
+      - name: Python csomagok telepítése
+        run: |
+          cd Kod2/01
+          pip install -r requirements.txt
+      - name: Alkalmazás indítása
+        run: |
+          cd Kod2/01
+          python app.py
+      - name: Tesztelés
+        run: |
+          cd Kod2/01
+          curl -sS http://localhost:8000 | grep -q "Docker alkalmazás"
+
   deploy:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
 
     steps:
     
       - name: Kód letöltése
-        if: github.event_name != 'pull_request'
         uses: actions/checkout@v4
 
       - name: ACR bejelentkezés
-        if: github.event_name != 'pull_request'
         uses: docker/login-action@v3
         with:
           registry: ${{ secrets.ACR_LOGIN_SERVER }}
@@ -51,7 +60,6 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
 
       - name: Extract Docker metadata
-        if: github.event_name != 'pull_request'
         id: meta
         uses: docker/metadata-action@v5
         with:
@@ -62,7 +70,6 @@ jobs:
             type=semver,pattern={{version}},event=tag
 
       - name: Épít és feltölt
-        if: github.event_name != 'pull_request'
         uses: docker/build-push-action@v5
         with:
           context: ./Kod2/01
@@ -73,5 +80,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: ACR kijelentkezés
-        if: github.event_name != 'pull_request'
         run: docker logout ${{ secrets.ACR_LOGIN_SERVER }}
