@@ -5,9 +5,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "Kod4/**"
   pull_request:
     branches:
       - release-*
+    paths:
+      - "Kod4/**"
 
 env:
   APP_NAME: python-streamlit-webapp # Alkalmazás képfájl neve
@@ -39,11 +43,12 @@ jobs:
             ${{ runner.os }}-buildx-
 
       - name: Épít és feltölt
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./Dockerfile
+          context: ./Kod4
+          file: ./Kod4/Dockerfile
           push: true
+          platforms: linux/amd64
           tags: |
             ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.APP_NAME }}:latest    
             ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.APP_NAME }}:${{ github.sha }}
