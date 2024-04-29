@@ -1,4 +1,4 @@
-# Docke példa webalkalmazás
+# Docker példa API
 
 ## Python/Flask alkalmazás
 
