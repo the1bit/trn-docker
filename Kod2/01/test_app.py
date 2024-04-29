@@ -14,7 +14,7 @@ class TestFlaskApp(unittest.TestCase):
         # Check that the response is OK
         self.assertEqual(response.status_code, 200)
         # Check the data returned
-        self.assertEqual(response.data.decode('utf-8'), "Docker webalkalmazás")
+        self.assertEqual(response.data.decode('utf-8'), "Docker alkalmazás")
 
 if __name__ == '__main__':
     unittest.main()
