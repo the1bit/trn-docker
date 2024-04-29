@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Kezdőoldal
 @app.route("/", methods=["GET"])
 def info():
-    return "Docker webalkalmazás"
+    return "Docker alkalmazás"
 
 # Helló Világ!
 @app.route("/hello", methods=["GET"])

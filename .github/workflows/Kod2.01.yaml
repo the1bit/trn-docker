@@ -35,14 +35,10 @@ jobs:
         run: |
           cd Kod2/01
           pip install -r requirements.txt
-      - name: Alkalmazás indítása
-        run: |
-          cd Kod2/01
-          nohup python app.py &
       - name: Tesztelés
         run: |
           cd Kod2/01
-          curl -sS http://localhost:8000 | grep -q "Docker alkalmazás"
+          python -m unittest test_app.py
 
   deploy:
     name: Telepítés (CD)

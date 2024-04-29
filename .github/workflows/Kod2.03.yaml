@@ -8,19 +8,45 @@ on:
     paths:
       - "Kod2/03/**"
   pull_request:
-    branches:
-      - release-*
     paths:
       - "Kod2/03/**"
 
 env:
-  APP_NAME: python-flask-app-03 # Alkalmazás képfájl neve
+  APP_NAME: python-flask-app-01 # Alkalmazás képfájl neve
 
 jobs:
-  build:
+  test:
+    name: Tesztelés (CI)
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
 
     steps:
+    
+      - name: Kód letöltése
+        uses: actions/checkout@v4
+      - name: Python beállítása
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          architecture: 'x64'
+      - name: Python verzió megjelenítése
+        run: python -c "import sys; print(sys.version)"
+      - name: Python csomagok telepítése
+        run: |
+          cd Kod2/03
+          pip install -r requirements.txt
+      - name: Tesztelés
+        run: |
+          cd Kod2/03
+          python -m unittest test_app.py
+
+  deploy:
+    name: Telepítés (CD)
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+    
       - name: Kód letöltése
         uses: actions/checkout@v4
 
