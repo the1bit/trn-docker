@@ -12,8 +12,8 @@
 ├── frontend
 │   ├── Dockerfile
 │   ├── app.py
-└── └── requirements.txt
- 
+├── └── requirements.txt
+└── docker-compose.yaml
 
 ```
 
@@ -59,3 +59,26 @@ docker build --tag mt-web:latest .
 ```bash
 docker run --name web --network mt-network -p 8000:5000 -d -e DB_HOST='adatbazis' -e DB_USER='root' -e DB_PASS='2NUW-a5QdH-8fAXy' -e DB_NAME='adatbazis' mt-web:latest
 ````
+
+
+## Docker Compose
+
+### Indítás építéssel
+
+```bash
+docker-compose up --build
+```
+
+### Indítás
+
+```bash
+docker-compose up -d
+```
+
+_Megjegyzés: `-d` kapcsolóval a konténerek a háttérben futnak._
+
+### Leállítás
+
+```bash
+docker-compose down
+```
