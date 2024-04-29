@@ -1,0 +1,55 @@
+name: Kód2 (python-flask-app-01) - Épít és feltölt
+# Kód4 példához - Épít és feltölt Docker image-t Azure Container Registry-be
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "Kod2/01/**"
+  pull_request:
+    branches:
+      - release-*
+    paths:
+      - "Kod2/01/**"
+
+env:
+  APP_NAME: python-flask-app-01 # Alkalmazás képfájl neve
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kód letöltése
+        uses: actions/checkout@v4
+
+      - name: ACR bejelentkezés
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.ACR_LOGIN_SERVER }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.APP_NAME }}
+          tags: |
+            type=sha
+            type=raw,value=latest
+            type=semver,pattern={{version}},event=tag
+
+      - name: Épít és feltölt
+        uses: docker/build-push-action@v5
+        with:
+          context: ./Kod2/01
+          file: ./Kod2/01/Dockerfile
+          push: true
+          platforms: linux/amd64
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: ACR kijelentkezés
+        run: docker logout ${{ secrets.ACR_LOGIN_SERVER }}
