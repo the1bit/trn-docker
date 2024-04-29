@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  mt-db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: 2NUW-a5QdH-8fAXy
+      MARIADB_DATABASE: adatbazis
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - mt-network
+  mt-web:
+    build: ./frontend/.
+    ports:
+      - "8000:5000"
+    volumes:
+      - ./frontend:/app
+    environment:
+      FLASK_APP: app.py
+      DB_HOST: mt-db
+      DB_USER: root
+      DB_PASS: 2NUW-a5QdH-8fAXy
+      DB_NAME: adatbazis
+    networks:
+      - mt-network
+
+networks:
+  mt-network:
+    driver: bridge
+
+volumes:
+  mariadb_data:
+    driver: local
