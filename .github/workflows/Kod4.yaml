@@ -9,7 +9,7 @@ on:
       - "Kod4/**"
   pull_request:
     branches:
-      - release-*
+      - "*"
     paths:
       - "Kod4/**"
 
@@ -17,7 +17,33 @@ env:
   APP_NAME: python-streamlit-webapp # Alkalmazás képfájl neve
 
 jobs:
-  build:
+  test: 
+    name: Tesztelés (CI)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kód letöltése
+        uses: actions/checkout@v4
+      - name: Python beállítása
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          architecture: 'x64'
+      - name: Python verzió megjelenítése
+        run: python -c "import sys; print(sys.version)"
+      - name: Python csomagok telepítése
+        run: |
+          cd Kod4
+          pip install -r requirements.txt
+      - name: Alkalmazás tesztelés
+        run: |
+          cd Kod4
+          pytest
+
+  deploy:
+    name: Telepítés (CD)
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
 
     steps:
