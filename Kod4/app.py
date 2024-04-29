@@ -4,6 +4,9 @@ import pandas as pd
 import numpy as np
 import time
 
+# Session state
+st.session_state.szamlalo = st.session_state.get("szamlalo", 0)
+
 # Cím
 st.title("Mentor Klub - Docker alapú alkalmazások Cloud-ban")
 # Szöveg, amely formázva van
@@ -12,6 +15,12 @@ st.write(
          ## (Mentor Klub - 2024. 05. 09.)
          # """
 )
+
+# Számláló
+ertek = st.number_input("", 0, 10)
+if st.button("+1"):
+    st.session_state.szamlalo += ertek
+st.markdown(f"Számláló: {st.session_state.szamlalo}")
 
 # Csúszka
 window = st.slider("Mennyire van jó kedved ma?", 1, 10, 7)
