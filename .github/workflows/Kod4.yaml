@@ -36,9 +36,10 @@ jobs:
         run: |
           cd Kod4
           pip install -r requirements.txt
-      - uses: streamlit/streamlit-app-action@v0.0.3
-        with:
-          app-path: Kod4/app.py
+          - name: alkalmazás tesztelés
+          run: |
+            cd Kod4
+            pytest
 
   deploy:
     name: Telepítés (CD)
