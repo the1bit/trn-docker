@@ -10,8 +10,8 @@ COPY . .
 # Telepítsük a szükséges csomagokat a requirements.txt fájl alapján
 RUN pip install -r requirements.txt
 
-# Exponáljuk az 8000-es portot
-EXPOSE 8501
+# Exponáljuk az 8080-es portot
+EXPOSE 8080
 
 # Indítsuk el az alkalmazást
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8080", "--server.address=0.0.0.0"]

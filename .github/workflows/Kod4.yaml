@@ -1,4 +1,4 @@
-name: Kód4 példához - Épít és feltölt (python-streamlit-webapp)
+name: Kód4 (python-streamlit-webapp) - Épít és feltölt
 # Kód4 példához - Épít és feltölt Docker image-t Azure Container Registry-be
 
 on:

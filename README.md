@@ -246,10 +246,27 @@ docker push [ACR név].azurecr.io/[kép neve]:[verzió]
 ### Azure Docker instance létrehozása
 
 1. Lépjünk be az Azure Portalba.
-2. Kattintsunk az "Új erőforrás létrehozása" gombra.
-3. Keresés mezőbe írjuk be a "Container Instances" szót.
-4. Kattintsunk a "Container Instances" lehetőségre.
-5. Kattintsunk a "Létrehozás" gombra.
+2. Keressünk rá a "Tárolópéldányok" szóra a képernyő tetején található keresőmezőben.
+3. Kattints a "Tárolópéldányok" lehetőségre.
+4. Kattintsunk a "Létrehozás" gombra.
+5. Adja meg a következő adatokat:
+   - Tároló neve: egyedi név a tárolóhoz
+   - Location: a régió, ahol az tároló létrejön
+   - Kép forrása: Azure Container Registry
+   - Lemezkép: a korábban feltöltött kép
+   - Lemezkép-címke: a `latest` vagy a verziószám
+   - Operációs rendszer: Linux
+   - Méret: 1 vCPU, 1 GB RAM, 0 gpu
+6. Kattintsunk a "Következő" gombra.
+7. DNS-névcímke: maradhat üresen
+8. Portok: 80
+9. Kattintsunk a "Következő" gombra.
+10. Újraindítási szabályzat: Mindig
+11. Kattintsunk a "Következő" gombra.
+12. Kattintsunk a "Következő" gombra.
+13. Kattintsunk a "Létrehozás" gombra.
+
+
 
 
 ## DevOps CI/CD pipeline alkalmazása
