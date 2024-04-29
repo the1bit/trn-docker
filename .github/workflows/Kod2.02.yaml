@@ -12,7 +12,7 @@ on:
       - "Kod2/02/**"
 
 env:
-  APP_NAME: python-flask-app-01 # Alkalmazás képfájl neve
+  APP_NAME: python-flask-app-02 # Alkalmazás képfájl neve
 
 jobs:
   test:
