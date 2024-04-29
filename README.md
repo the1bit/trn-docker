@@ -188,37 +188,6 @@ Azure Container Registry (ACR) egy Docker képtároló, amely lehetővé teszi a
    - Location: a régió, ahol az ACR tárolva lesz
    - SKU: az ACR ártervezési modellje
 
-
-### Azure Service Principal létrehozása (GitHub Actions-höz szükséges)
-
-_Megjegyzés: Co-Admin vagy Tulajdonosi jogosultság szükséges az Azure Subscription-höz._
-
-1. Lépjünk be a portálba.
-2. Nyissuk meg a "Cloud Shell"-t.
-3. Futtassuk az alábbi parancsot:
-
-```bash
-az ad sp create-for-rbac --name sp-mentorklub-docker --query '{"displayName": displayName "client_id": appId, "secret": password, "tenant": tenant}'
-```
-
-**Fontos: A kapott adatokat (secret) mentse el, mert csak egyszer jelennek meg!**
-
-### Service Proncipal jogosultság hozzáadása az ACR-hez (programozott hozzáféréshez szükséges)
-
-1. Lépjünk be az Azure Container Registry
-2. Menjünk a "Hozzáférés-vezérlés (IAM)" menüpontba
-3. Kattintsunk a "Hozzáadás" gombra
-4. Válasszuk ki a "Szerepkör-hozzárendelés hozzáadása" lehetőséget
-5. Kattintsunk a "Kiemelt rendszergazdai szerepkörök" fülre
-6. Válasszuk ki a "Közreműködő" szerepkört
-7. Kattintsunk a "Tovább" gombra
-8. Kattintsunk a "Tagok kiválasztása" linkre
-9. Keresés mezőbe írjuk be a Service Principal nevét
-10. Jelöljük ki a Service Principal-t
-11. Kattintsunk a "Kiválasztás" gombra
-12. Kattintsunk az "Ellenőrzés és hozzárendelés" gombra
-13. Kattintsunk az "Ellenőrzés és hozzárendelés" gombra
-
 ### Docker kép feltöltése az ACR-be
 
 1. Bejelentkezés az ACR-be:
@@ -267,11 +236,11 @@ docker push [ACR név].azurecr.io/[kép neve]:[verzió]
 13. Kattintsunk a "Létrehozás" gombra.
 
 
-
-
 ## DevOps CI/CD pipeline alkalmazása
 
 ### GitHub Actions
+
+
 
 ### Secrets kezelése GitHub repository-ban, ACR hozzáféréshez
 
@@ -300,7 +269,8 @@ docker push [ACR név].azurecr.io/[kép neve]:[verzió]
 4. Másoljuk be a következő kódot a fájlba:
 
 ```yaml
-name: Build and push Docker image to ACR
+```
+
 
 
 
