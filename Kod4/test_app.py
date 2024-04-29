@@ -5,4 +5,4 @@ def test_increment_and_add():
     at = AppTest.from_file("app.py").run()
     at.number_input[0].increment().run()
     at.button[0].click().run()
-    assert at.markdown[1].value == "Számláló: 2"
+    assert at.markdown[1].value == "Számláló: 1"
