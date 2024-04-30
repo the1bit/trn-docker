@@ -104,8 +104,6 @@ Megjegyzés:
 - Ha az image fájlt Apple Silicon processzoros gépen készítem, de utána Intel processzoros gépen használom, akkor a fenti parancshoz adjuk hozzá ezt: `--platform linux/amd64`
 - Több platformos build: `docker buildx build --tag [kép neve címkével] --push . --platform linux/amd64,linux/arm64,linux/arm/v7`
 
-## Első Docker konténer
-
 ## Konténer adatainak ellenőrzése, naplózás
 
 ### Konténer adatainak ellenőrzése
