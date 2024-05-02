@@ -33,16 +33,16 @@ A Docker egy innovatív eszköz, amely segít a fejlesztőknek és rendszergazd�
 
 - **Miért Docker?**
 
-- **Konzisztencia**: A Docker garantálja, hogy az alkalmazás ugyanúgy fut minden környezetben, legyen szó fejlesztői gépről vagy termelési környezetről.
-- **Izoláció**: Minden konténer izoláltan működik, így a szoftverek kölcsönös zavarása nélkül futtathatók.
-- **Biztonság**: Az izoláció révén a Docker javítja az alkalmazások biztonságát, mivel a konténerek korlátozzák a hozzáférést és erőforrás-használatot.
-- **Skálázhatóság és menedzsment**: A Docker lehetővé teszi az alkalmazások könnyű skálázását és kezelését, ami ideálissá teszi őket mikroszolgáltatások architektúrájában.
+   - **Konzisztencia**: A Docker garantálja, hogy az alkalmazás ugyanúgy fut minden környezetben, legyen szó fejlesztői gépről vagy termelési környezetről.
+   - **Izoláció**: Minden konténer izoláltan működik, így a szoftverek kölcsönös zavarása nélkül futtathatók.
+   - **Biztonság**: Az izoláció révén a Docker javítja az alkalmazások biztonságát, mivel a konténerek korlátozzák a hozzáférést és erőforrás-használatot.
+   - **Skálázhatóság és menedzsment**: A Docker lehetővé teszi az alkalmazások könnyű skálázását és kezelését, ami ideálissá teszi őket mikroszolgáltatások architektúrájában.
 
 - **Alapvető fogalmak**
 
-- **Docker képfájlok**: A Docker képek a szoftvercsomagok állóképei, amelyek tartalmazzák az alkalmazások futtatásához szükséges minden fájlt és könyvtárat.
-- **Konténerek**: Az indított Docker képekből létrehozott futtatható példányok, amelyek tartalmazzák az alkalmazást és annak futtatásához szükséges környezetet.
-- **Docker Hub**: A Docker saját registry-je, ahol a fejlesztők feltölthetik és letölthetik a különböző Docker képeket.
+   - **Docker képfájlok**: A Docker képek a szoftvercsomagok állóképei, amelyek tartalmazzák az alkalmazások futtatásához szükséges minden fájlt és könyvtárat.
+   - **Konténerek**: Az indított Docker képekből létrehozott futtatható példányok, amelyek tartalmazzák az alkalmazást és annak futtatásához szükséges környezetet.
+   - **Docker Hub**: A Docker saját registry-je, ahol a fejlesztők feltölthetik és letölthetik a különböző Docker képeket.
 
 A Docker alapos megértése kulcsfontosságú a modern szoftverfejlesztési és telepítési folyamatokban. Reméljük, ez a rövid bevezető segít megérteni a Docker alapjait és előnyeit, ami alapozza majd a további mélyebb ismeretek elsajátítását.
 
@@ -51,14 +51,14 @@ A Docker alapos megértése kulcsfontosságú a modern szoftverfejlesztési és 
 
 Telepítési link (Mac, Linux, Windows): https://www.docker.com/products/docker-desktop
 
-Miért Docker Desktop?
+- **Miért Docker Desktop?**
 
-- Egyszerűen telepíthető
-- Minden szükséges komponenst feltelepít
-- Erőforrásszükséglet a futtató géphez szabható
-- Teljes Docker funkcionalitás (images, DockerHub)
-- Helyi Kubernetes (K8s) szerver
-- Kiegészítők (monitorozás, egyéb cluster megoldások)
+   - Egyszerűen telepíthető
+   - Minden szükséges komponenst feltelepít
+   - Erőforrásszükséglet a futtató géphez szabható
+   - Teljes Docker funkcionalitás (images, DockerHub)
+   - Helyi Kubernetes (K8s) szerver
+   - Kiegészítők (monitorozás, egyéb cluster megoldások)
 
 ## Docker parancsok
 
