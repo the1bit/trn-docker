@@ -264,12 +264,11 @@ docker push [ACR név].azurecr.io/[kép neve]:[verzió]
 1. Clone-ozzuk le a repository-t a gépünkre.
 2. Hozzunk létre egy `.github/workflows` mappát a repository gyökérkönyvtárában.
 3. Hozzunk létre egy `elso-github-action.yml` fájlt a `.github/workflows` mappában.
-4. Másoljuk be a következő kódot a fájlba:
+4. Készítsük el a megfelelő CI/CD pipeline-t a fájlban. (nem szükséges a teéjes folyamatot egy fájlban megvalósítani. Lehetséges, hogy egy nagy CI/CD folyamatot több fájlban valósítunk meg.)
 
-```yaml
-```
-
-
+Példák:
+- [.github/workflows/penda.yml](/.github/workflows/pelda.yaml)
+- [.github/workflows](/.github/workflows)
 
 
 ## Azure Webalkalmazás létrehozása Docker képből
