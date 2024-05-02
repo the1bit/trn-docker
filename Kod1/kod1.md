@@ -1,5 +1,7 @@
 # Alap Docker példa
 
+Hivatalos Python Docker kép használata: https://hub.docker.com/_/python
+
 
 1. Indítsunk el egy Python konténert, és futtassunk benne egy Python parancsot.
 
