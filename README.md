@@ -385,7 +385,7 @@ Workflow fájlok (általában `.github/workflows` mappában található YAML fá
 4. Készítsük el a megfelelő CI/CD pipeline-t a fájlban. (nem szükséges a teéjes folyamatot egy fájlban megvalósítani. Lehetséges, hogy egy nagy CI/CD folyamatot több fájlban valósítunk meg.)
 
 Példák:
-- [.github/workflows/penda.yml](/.github/workflows/pelda.yaml)
+- [.github/workflows/pelda.yml](/.github/workflows/pelda.yaml)
 - [.github/workflows](/.github/workflows)
 
 
