@@ -2,7 +2,7 @@
 
 Képzési anyag a Docker használatához.
 
-Ha elakadtál, vagy kérdésed vanm, írj nekünk a [Hibajelenség / Kérdés](https://github.com/cloudsteak/mentor-klub-cloud/issues/new/choose)
+Ha elakadtál, vagy kérdésed van, írj nekünk: [Hibajelenség / Kérdés](https://github.com/cloudsteak/mentor-klub-cloud/issues/new/choose)
 
 ## Tartalomjegyzék
 
