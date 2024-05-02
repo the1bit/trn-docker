@@ -1,5 +1,23 @@
 # Docker gyakorlati példák
 
+## Tartalomjegyzék
+
+- [Docker alapok](#docker-alapok)
+- [Docker Desktop telepítése](#docker-desktop-telepítése)
+- [Docker parancsok](#docker-parancsok)
+- [Konténer adatainak ellenőrzése, naplózás](#konténer-adatainak-ellenőrzése-naplózás)
+- [Konténer indítása, leállítása](#konténer-indítása-leállítása)
+- [Konténer hálózatok](#konténer-hálózatok)
+- [Docker fájlrendszer](#docker-fájlrendszer)
+- [Parancsok futtatása konténerben](#parancsok-futtatása-konténerben)
+- [Képek kezelése (letöltés, címkézés)](#képek-kezelése-letöltés-címkézés)
+- [Képek létrehozása (docker build)](#képek-létrehozása-docker-build)
+- [Docker Compose](#docker-compose)
+- [Docker alapú alkalmazás saját képből](#docker-alapú-alkalmazás-saját-képből)
+- [Képek tárolása Azure-ban (ACR)](#képek-tárolása-azure-ban-acr)
+- [Azure erőforrások létrehozása Docker képből](#azure-erőforrások-létrehozása-docker-képből)
+- [DevOps CI/CD pipeline alkalmazása](#devops-cicd-pipeline-alkalmazása)
+- [Azure Webalkalmazás létrehozása Docker képből](#azure-webalkalmázás-létrehozása-docker-képből)
 
 
 Képzési anyag a Docker használatához.
@@ -8,14 +26,14 @@ Képzési anyag a Docker használatához.
 
 A Docker egy innovatív eszköz, amely segít a fejlesztőknek és rendszergazdáknak az alkalmazások gyors kifejlesztésében, telepítésében és skálázásában konténerizált környezetben. Konténerek segítségével a Docker lehetővé teszi az alkalmazások csomagolását és futtatását izolált környezetben, ami nagyban hozzájárul a platformok közötti kompatibilitáshoz és az infrastruktúra hatékonyságának növeléséhez.
 
-### Miért Docker?
+- **Miért Docker?**
 
 - **Konzisztencia**: A Docker garantálja, hogy az alkalmazás ugyanúgy fut minden környezetben, legyen szó fejlesztői gépről vagy termelési környezetről.
 - **Izoláció**: Minden konténer izoláltan működik, így a szoftverek kölcsönös zavarása nélkül futtathatók.
 - **Biztonság**: Az izoláció révén a Docker javítja az alkalmazások biztonságát, mivel a konténerek korlátozzák a hozzáférést és erőforrás-használatot.
 - **Skálázhatóság és menedzsment**: A Docker lehetővé teszi az alkalmazások könnyű skálázását és kezelését, ami ideálissá teszi őket mikroszolgáltatások architektúrájában.
 
-### Alapvető fogalmak
+- **Alapvető fogalmak**
 
 - **Docker képfájlok**: A Docker képek a szoftvercsomagok állóképei, amelyek tartalmazzák az alkalmazások futtatásához szükséges minden fájlt és könyvtárat.
 - **Konténerek**: Az indított Docker képekből létrehozott futtatható példányok, amelyek tartalmazzák az alkalmazást és annak futtatásához szükséges környezetet.
