@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Egy soros script
         run: echo Helló világ!
-      - name: Töb soros script
+      - name: Több soros script
         run: |
-          echo "További sorok"
+          echo "További sor"
           echo "Bármilyen parancsot is futtathatnánk"
