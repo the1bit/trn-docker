@@ -83,10 +83,12 @@ wget -Uri https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.m
 ```
 
 8. Telepítsd a WSL 2 kernel frissítést.
+
    ```PowerShell
    cd $env:USERPROFILE\Downloads
    .\wsl_update_x64.msi
    ```
+
 9. Nyiss egy PowerShell-t rendszergazdaként. Állítsd be a WSL 2-t alapértelmezett verzióként. Futtasd le az alábbi parancsot:
 
 ```PowerShell
@@ -101,15 +103,16 @@ wsl --update
 
 11. Telepítsd az Ubuntu 24.04 Linux disztribúciót
 
-   ```PowerShell
-   wsl --install -d Ubuntu-24.04
-   ```
+```PowerShell
+wsl --install -d Ubuntu-24.04
+```
 
-12. Töltsd le a Docker Desktop telepítőt a hivatalos weboldalról. (https://www.docker.com/products/docker-desktop)
-13. Indítsd el a telepítőt, és kövesd az utasításokat.
-14. A telepítés során válaszd ki a WSL 2-t is.
-15. Telepítés után kéri, hogy jelentkezz ki a felhasználókkal. Újra indítás a legbiztosabb megoldás, hogy minden rendben legyen.
-16. Használatba vehető a Docker Desktop.
+12. A telepítés során kérni fogja a felhasználónevet és a jelszót. Ezeket add meg.
+13. Töltsd le a Docker Desktop telepítőt a hivatalos weboldalról. (https://www.docker.com/products/docker-desktop)
+14. Indítsd el a telepítőt, és kövesd az utasításokat.
+15. A telepítés során válaszd ki a WSL 2-t is.
+16. Telepítés után kéri, hogy jelentkezz ki a felhasználókkal. Újra indítás a legbiztosabb megoldás, hogy minden rendben legyen.
+17. Használatba vehető a Docker Desktop.
 
 - **Miért Docker Desktop?**
 
