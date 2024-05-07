@@ -51,6 +51,33 @@ A Docker alapos megértése kulcsfontosságú a modern szoftverfejlesztési és 
 
 Telepítési link (Mac, Linux, Windows): https://www.docker.com/products/docker-desktop
 
+Linux és Mac esetén a Docker Desktop telepítése egyszerű, csak letöltjük a telepítőt, és követjük a telepítési utasításokat. Windows esetén a telepítéshez szükség van a WSL 2 (Windows Subsystem for Linux) telepítésére is.
+
+- **Windows telepítési lépések**
+
+1. Töltsd le a Docker Desktop telepítőt a hivatalos weboldalról.
+2. Indítsd el a telepítőt, és kövesd az utasításokat.
+3. A telepítés során válaszd ki a WSL 2 telepítését is.
+4. A telepítés befejezése után indítsd újra a gépet.
+5. Konfigurád a WSL 2-t a Docker Desktop-hoz.
+   1. Nyisd meg a PowerShell-t rendszergazdaként.
+   2. Futtasd le az alábbi parancsot:
+   ```PowerShell
+   wsl --set-default-version 2
+   ```
+   3. Ellenőrizd a WSL 2 verzióját:
+   ```PowerShell
+   wsl.exe -l -v
+   ```
+   4. Telepítsd az Ubuntu 22.04 Linux disztribúciót
+   ```PowerShell
+   wsl --install -d Ubuntu-22.04
+   ```
+   5. Állítsd be az Ubuntu 22.04 disztribúciót WSL 2-re
+   ```PowerShell
+   wsl --set-version Ubuntu-22.04 2
+   ```
+
 - **Miért Docker Desktop?**
 
   - Egyszerűen telepíthető
