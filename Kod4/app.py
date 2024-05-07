@@ -18,7 +18,7 @@ st.write(
 
 # Számláló
 ertek = st.number_input("", 0, 10)
-if st.button("+1"):
+if st.button("Hozzáad"):
     st.session_state.szamlalo += ertek
 st.markdown(f"Számláló: {st.session_state.szamlalo}")
 

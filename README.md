@@ -62,6 +62,8 @@ Ha Azure VM-en szeretnénk használni a Docker Desktop-ot, akkor a WSL 2 telepí
    - Kép:
       - **Windows Server 2022 Datacenter - x64 Gen2**
       - **Windows 11**
+   - Méret: például **Standard D2s v3**   
+
 2. Lépj be a gépbe RDP-n keresztül.
 3. Nyiss egy PowerShell-t rendszergazdaként.
 4. WSL engedélyezése. Futtasd le az alábbi parancsot:

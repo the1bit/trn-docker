@@ -2,6 +2,12 @@
 
 ## Projekt leírása
 
+Adatbázis szerver és webalkalmazás konténerek futtatása Docker környezetben.
+
+## Kiegészítő alkalmazások
+
+DBEaver adatbázis kliens: https://dbeaver.com/download/lite/
+
 ## Projekt struktúra
 
 ```bash
@@ -31,10 +37,16 @@ docker network create mt-network
 docker build --tag mt-db:latest .
 ```
 
-### Adattárolás a konténeren belül
+### Adattárolás a konténeren belül (nem elérhető a hoston)
 
 ```bash
 docker run --name adatbazis --network mt-network -d mt-db:latest
+```
+
+### Adattárolás a konténeren belül (elérhető a hoston)
+
+```bash
+docker run --name adatbazis -p 3306:3306 --network mt-network -d mt-db:latest
 ```
 
 ### Adattárolás a konténeren kívül (persistent volume)
@@ -46,7 +58,7 @@ docker volume create mariadb_data
 ```
 
 ```bash
-docker run --name adatbazis --network mt-network -d -v mariadb_data:/var/lib/mysql mt-db:latest
+docker run --name adatbazis -p 3306:3306 --network mt-network -d -v mariadb_data:/var/lib/mysql mt-db:latest
 ```
 
 ## Webalkalmazás
@@ -60,6 +72,9 @@ docker build --tag mt-web:latest .
 docker run --name web --network mt-network -p 8000:5000 -d -e DB_HOST='adatbazis' -e DB_USER='root' -e DB_PASS='2NUW-a5QdH-8fAXy' -e DB_NAME='adatbazis' mt-web:latest
 ````
 
+- Használat:
+
+  Böngészőben: http://localhost:8000
 
 ## Docker Compose
 

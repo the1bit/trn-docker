@@ -32,7 +32,7 @@ docker build --tag python-streamlit-webapp:1.0 .
 - Futtatás:
 
 ```bash
-docker run -d -p 8081:8501 python-streamlit-webapp:1.0
+docker run -d -p 8081:80 python-streamlit-webapp:1.0
 ```
 
 - Használat:
