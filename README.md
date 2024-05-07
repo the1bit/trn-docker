@@ -82,7 +82,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 wget -Uri https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi -OutFile "$env:USERPROFILE\Downloads\wsl_update_x64.msi"
 ```
 
-8. Telepítsd a WSL 2 kernel frissítést.
+8. Telepítsd a WSL 2 kernel frissítést. (`$env:USERPROFILE\Downloads\wsl_update_x64.msi`)
 9. Nyiss egy PowerShell-t rendszergazdaként. Állítsd be a WSL 2-t alapértelmezett verzióként. Futtasd le az alábbi parancsot:
 
 ```PowerShell
