@@ -24,7 +24,7 @@ Ha elakadtál, vagy kérdésed van, írj nekünk: [Hibajelenség / Kérdés](htt
 - [DevOps CI/CD pipeline alkalmazása](#devops-cicd-pipeline-alkalmazása)
 - [Azure Webalkalmazás létrehozása Docker képből](#azure-webalkalmázás-létrehozása-docker-képből)
 - Példák:
-  - [Kód 1 - Alap python példa](./Kod1/kod1.md)
+  - [Kód 1 - Alap python példa](./Kod1/README.md)
   - [Kód 2 - API példa](./Kod2/README.md)
   - [Kód 3 - Docker Compose példa (web + sql)](./Kod3/README.md)
   - [Kód 4 - Webalkalmazás példa](./Kod4/README.md)
