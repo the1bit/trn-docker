@@ -6,6 +6,7 @@ Ha elakadtál, vagy kérdésed van, írj nekünk: [Hibajelenség / Kérdés](htt
 
 ## Tartalomjegyzék
 
+- [Hasnos linkek](#hasnos-linkek)
 - [Docker alapok](#docker-alapok)
 - [Docker Desktop telepítése](#docker-desktop-telepítése)
 - [Docker parancsok](#docker-parancsok)
@@ -34,6 +35,7 @@ Ha elakadtál, vagy kérdésed van, írj nekünk: [Hibajelenség / Kérdés](htt
 - [Git](https://git-scm.com/download/win)
 - [Visual Studio Code](https://code.visualstudio.com/Download)
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
+- [HeidiSQL](https://www.heidisql.com/download.php)
 
 ## Docker alapok
 
