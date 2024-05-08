@@ -28,6 +28,13 @@ Ha elakadtál, vagy kérdésed van, írj nekünk: [Hibajelenség / Kérdés](htt
   - [Kód 3 - Docker Compose példa (web + sql)](./Kod3/README.md)
   - [Kód 4 - Webalkalmazás példa](./Kod4/README.md)
 
+## Hasnos linkek
+
+- [Docker desktop letöltése](https://www.docker.com/products/docker-desktop)
+- [Git](https://git-scm.com/download/win)
+- [Visual Studio Code](https://code.visualstudio.com/Download)
+- [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
+
 ## Docker alapok
 
 A Docker egy innovatív eszköz, amely segít a fejlesztőknek és rendszergazdáknak az alkalmazások gyors kifejlesztésében, telepítésében és skálázásában konténerizált környezetben. Konténerek segítségével a Docker lehetővé teszi az alkalmazások csomagolását és futtatását izolált környezetben, ami nagyban hozzájárul a platformok közötti kompatibilitáshoz és az infrastruktúra hatékonyságának növeléséhez.
@@ -313,6 +320,7 @@ docker-compose down
 ## Docker alapú alkalmazás saját képből
 
 Jelenleg Azure Container Registry (ACR) szolgáltatásban tároljuk a Docker képeket, amelyeket a GitHub Actions segítségével automatizáltan telepítünk az Azure Webalkalmazásba.
+
 
 ## Képek tárolása Azure-ban (ACR)
 
