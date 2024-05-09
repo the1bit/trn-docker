@@ -12,7 +12,7 @@ st.title("Mentor Klub - Docker alapú alkalmazások Cloud-ban")
 # Szöveg, amely formázva van
 st.write(
     """
-         ## (Mentor Klub - 2024. 05. 09.)
+         ## (Mentor Klub - 2024.05.09.)
          # """
 )
 
