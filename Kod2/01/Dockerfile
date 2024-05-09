@@ -16,5 +16,6 @@ EXPOSE 8000
 # Flask alkalmazás beállítása
 ENV FLASK_APP=app.py
 
+
 # Flask alkalmazás indítása
 CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8000"]
