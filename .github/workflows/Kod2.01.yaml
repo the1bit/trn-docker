@@ -12,7 +12,7 @@ on:
       - "Kod2/01/**"
 
 env:
-  APP_NAME: python-flask-app-01 # Alkalmazás képfájl neve
+  APP_NAME: the1bit-python-flask-app-01 # Alkalmazás képfájl neve
 
 jobs:
   test:
