@@ -14,7 +14,7 @@ on:
       - "Kod4/**"
 
 env:
-  APP_NAME: python-streamlit-webapp # Alkalmazás képfájl neve
+  APP_NAME: the1bit-python-streamlit-webapp # Alkalmazás képfájl neve
 
 jobs:
   test: 
